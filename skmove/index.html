@@ -436,9 +436,22 @@ function showall(){
 }
 </script>
 
+<!-- Event snippet for line conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
 function gtag_report_conversionline(url) {
-    window.location = url;
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11463723715/lDmaCMudr4UZEMOVqtoq',
+      'value': 20.0,
+      'currency': 'THB',
+      'event_callback': callback
+  });
+  return false;
 }
 </script>
 
