@@ -1,6 +1,5 @@
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11463723715">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11463723715"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -8,6 +7,7 @@
 
   gtag('config', 'AW-11463723715');
 </script>
+
 
 
 <!DOCTYPE html>
@@ -409,11 +409,26 @@
             </div>
         </span>
 </footer>
-
+<!-- Event snippet for โทร conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
 function gtag_report_conversion(url) {
-    window.location = url;
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11463723715/W12oCKWYr4UZEMOVqtoq',
+      'value': 50.0,
+      'currency': 'THB',
+      'event_callback': callback
+  });
+  return false;
 }
+</script>
+
+<script>
 
 function showall(){
     $('.imgshow').toggle();
